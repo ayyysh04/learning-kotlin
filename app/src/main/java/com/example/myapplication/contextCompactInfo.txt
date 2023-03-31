@@ -1,0 +1,11 @@
+In Kotlin (and Java) programming for Android, ContextCompat is a class provided by the Android Support Library that provides a set of utility methods for working with Context objects. Context is an abstract class that provides information about the application environment and is used to access system resources and services such as preferences, layouts, and strings.
+
+The ContextCompat class provides a set of static methods that allow you to perform common operations on a Context object in a way that is backwards-compatible with older versions of Android. These methods include:
+
+Accessing color resources: getColor() and getColorStateList()
+Accessing drawable resources: getDrawable()
+Accessing string resources: getString(), getStringArray(), getText(), getTextArray(), getQuantityString(), getQuantityText(), and getText()
+Accessing dimension resources: getDimension(), getDimensionPixelOffset(), and getDimensionPixelSize()
+Accessing system services: getSystemService()
+And more.
+Using ContextCompat instead of accessing resources directly from the Context object ensures that your app is compatible with older versions of Android. This is because some resource names or methods may have changed or been deprecated in newer versions of Android, and using ContextCompat helps to abstract away these differences.

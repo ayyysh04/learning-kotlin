@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".MediaPlayer"
+            android:exported="false" />
+        <activity
+            android:name=".BmiCalculator"
+            android:exported="false" />
+        <activity
+            android:name=".SharedPrefrenceLogic"
+            android:exported="false" /> <!-- Second activity -->
+        <activity android:name=".SecondActivity">
+
+            <!-- <intent-filter> -->
+            <!-- if uncomment this will be our main activity -->
+            <!--
+                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            -->
+            <!-- </intent-filter> -->
+        </activity> <!-- .main_logic : connects to kotlin class ,not to xml file -->
+        <activity android:name=".MainLogic">
+
+            <!-- defineds that this is the homepage or launcher activity -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

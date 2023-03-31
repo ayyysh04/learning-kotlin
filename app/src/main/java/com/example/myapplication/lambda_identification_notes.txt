@@ -1,0 +1,30 @@
+Ques : how to know which argument we have to pass in predefined lambda function like forEach ,apply ?
+
+Ans.In Kotlin, predefined lambda functions like forEach and apply have a specific signature that specifies the type of their arguments. To know which argument to pass to these functions, you need to check their documentation or function signature.
+
+For example, let's say you have a list of integers and you want to use the forEach function to iterate over each element in the list. The forEach function signature in the Kotlin standard library is:
+
+fun <T> Iterable<T>.forEach(action: (T) -> Unit): Unit
+This signature tells us that forEach is an extension function on the Iterable interface that takes a lambda expression as its argument. The lambda expression must take a single parameter of type T, which is the type of the elements in the iterable, and it must return Unit.
+
+Therefore, to use forEach with a list of integers, you would pass a lambda expression that takes a single Int parameter and performs some action with that parameter. For example:
+
+val numbers = listOf(1, 2, 3, 4, 5)
+numbers.forEach { number ->
+    println(number)
+}
+Similarly, the apply function signature in the Kotlin standard library is:
+
+fun <T> T.apply(block: T.() -> Unit): T
+This signature tells us that apply is an extension function on any type T that takes a lambda expression as its argument. The lambda expression must take no parameters and return Unit, and it can access the properties and functions of T using the this keyword.
+
+Therefore, to use apply with an object of a custom class, you would pass a lambda expression that performs some actions on the object using its properties and functions. For example:
+
+data class Person(var name: String, var age: Int)
+
+val person = Person("John", 30)
+person.apply {
+    name = "Jane"
+    age = 35
+}
+In this example, the lambda expression passed to apply sets the name and age properties of the Person object using the this keyword.

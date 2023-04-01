@@ -12,6 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MediaPlayer : AppCompatActivity() {
     private lateinit var seekBar: SeekBar
     private var mediaPlayer: MediaPlayer? = null //api in handling audio and video file
+//    MediaPlayer class can be used to control playback of audio/video files and streams.
     private lateinit var runnable: Runnable
     //In Kotlin, Runnable is an interface that defines a single method called run(), which takes no arguments and returns no value. This interface is used to represent a task that can be executed asynchronously on a separate thread i.e separate from the main thread (UI thread).
     //You can use Runnable in Kotlin to create a new thread that executes a piece of code. For example, suppose you want to perform some long-running task, such as downloading a large file from the internet, without blocking the main thread of your application. You can create a new thread and pass it a Runnable object that contains the code to download the file. The thread will execute the code in the run() method on a separate thread, leaving the main thread free to continue executing other tasks.

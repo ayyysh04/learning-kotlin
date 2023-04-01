@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.databinding.ActivityVideoPlayerBinding
 
 //AppCompactactivity : provides lifecycle override function like onCreate
 class MainLogic : AppCompatActivity() {
@@ -29,6 +30,7 @@ class MainLogic : AppCompatActivity() {
         val sharedPrefsButton = findViewById<Button>(R.id.go_to_sharedprefs)
         val bmiCalButton = findViewById<Button>(R.id.go_to_bmiCal)
         val mediaPlayerButton = findViewById<Button>(R.id.go_to_mediaPLayer)
+        val videoPlayerButton = findViewById<Button>(R.id.go_to_videoPlayer)
         var enteredName = ""
 //        setOnClickListner to listen to changes on button
         submitButton.setOnClickListener {
@@ -70,6 +72,10 @@ class MainLogic : AppCompatActivity() {
         }
         mediaPlayerButton.setOnClickListener {
             val intent = Intent(this, MediaPlayer::class.java)
+            startActivity(intent)
+        }
+        videoPlayerButton.setOnClickListener {
+            val intent = Intent(this, VideoPlayer::class.java)
             startActivity(intent)
         }
 

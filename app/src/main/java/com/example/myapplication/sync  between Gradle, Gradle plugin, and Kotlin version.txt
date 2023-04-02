@@ -1,0 +1,2 @@
+use AGP upgrade assistant tool in : Tools ->AGP upgrade assistant
+for ex.kotlin.version : find the latest kotlin version from online docs

@@ -1,0 +1,17 @@
+In Kotlin's build.gradle file, Groovy is used as a scripting language to define the build configuration for a Kotlin project.
+Kotlin build scripts are written in Groovy, which is a more concise and expressive language than XML or traditional Java-based build scripts. Groovy's syntax and features make it easier to define complex build tasks and automate repetitive tasks.
+The build.gradle file is used to configure various aspects of a Kotlin project, such as dependencies, plugins, tasks, and more. Groovy is used to define the syntax for each of these configurations, making it easier for developers to customize and automate their build process.
+For example, in a Kotlin build.gradle file, you might use Groovy to define the dependencies for your project, like this:
+    dependencies {
+        implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.7.0'
+        testImplementation 'junit:junit:4.13.2'
+    }
+This code uses Groovy syntax to define the dependencies for the project, including the Kotlin standard library and the JUnit testing library.
+In summary, Groovy is used in Kotlin's build.gradle file to define the build configuration for a Kotlin project, including dependencies, plugins, tasks, and more. Groovy's syntax and features make it easier to define complex build tasks and automate repetitive tasks.
+
+Q.Why kotlin build.gradle doesn't use Kotlin itself to define the build configuration ?
+
+Kotlin's build.gradle files do not use Kotlin itself to define the build configuration because the build.gradle file is executed by Gradle, which is a build automation tool that is written in Java and Groovy.
+Gradle uses Groovy as its build language by default, and this is why Kotlin's build.gradle files are written in Groovy. This means that, in order to customize the build process of a Kotlin project, developers need to write Groovy code in the build.gradle file.
+While it is technically possible to use Kotlin to define the build configuration for a Gradle project, it would require additional setup and configuration, and it may not be worth the effort. Additionally, using Groovy in the build.gradle file allows developers to take advantage of Gradle's powerful build automation features, which are optimized for use with Groovy.
+However, it's worth noting that Kotlin can be used in other parts of the Gradle build process. For example, Gradle supports writing plugins in Kotlin, and Kotlin can also be used to write custom tasks for Gradle. So while the build.gradle file itself is written in Groovy, Kotlin can still be used in other parts of the build process.

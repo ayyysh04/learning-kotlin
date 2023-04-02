@@ -1,0 +1,4 @@
+why do we write ::class.java when passing class as argument ?
+In Kotlin, ::class is used to get the class reference of an object or a type. In the context of Android development, when creating a new instance of a ViewModel using the ViewModelProvider class, we need to pass the Class object of the ViewModel to the get() method.
+The syntax MainActivityViewModel::class.java is used to get the Class object of the MainActivityViewModel class. Here, ::class returns a reference to the KClass object of the MainActivityViewModel class, and the .java property returns the corresponding java.lang.Class object.
+here ,In Kotlin, KClass is a class that represents the Kotlin class itself, as opposed to the class instance. It's a reflection class that provides information about a Kotlin class at runtime, such as its name, annotations, visibility, etc.

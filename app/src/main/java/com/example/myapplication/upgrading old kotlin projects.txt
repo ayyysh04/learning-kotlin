@@ -1,0 +1,17 @@
+To upgrade an old Kotlin project to the latest version of Gradle and Kotlin, you can follow these general steps:
+WHILE RUNNING KOTLIN PROJECTS FROM GITHUB ,ONLY CLONE THE "app" FOLDER AND GENERATE THE REST FILE YOURSELF
+THIS WILL PREVENT FROM DOWNLOADING OLD GRADLE USED IN THE PROJECT
+UPDATE THE "build.gradle" AND "gradle-wrapper.properties" TO LATEST VERSION OR CREATE A EMPTY ACTIVITY PROJECT AND REPLACE THE APP FOLDER WITH THE ONE YOU WILL BE GOING TO USE
+1.Update the Gradle wrapper: Open a terminal in the root directory of your project and run the following command: ./gradlew wrapper --gradle-version=<latest Gradle version>. This will update the Gradle wrapper to the latest version.
+2.Update the Kotlin version: Open the build.gradle.kts file and update the Kotlin version to the latest one. You can check the latest Kotlin version at the official Kotlin website.
+3.Update the Gradle version: In the build.gradle.kts file, update the gradleVersion property to the latest Gradle version.
+4.Update dependencies: Check if any of the project's dependencies have newer versions available, and update them in the build.gradle.kts file.
+5.Verify the upgrade: Run ./gradlew build in the terminal to verify that the project builds correctly with the updated Gradle and Kotlin versions.
+
+By following these steps, you can upgrade your old Kotlin project to the latest versions of Gradle and Kotlin, and prevent the downloading of old Gradle versions.
+
+ABOUT GRADLE WRAPPER :
+In the context of Kotlin and Android development, a Gradle Wrapper is a tool that allows you to run Gradle builds without having to manually install and manage a specific version of Gradle on your system.
+Gradle is a build automation tool that is widely used in the Android development community to build, test, and deploy apps. The Gradle Wrapper is a script that downloads and installs a specific version of Gradle automatically for your project. It is typically included in a project's source code repository, and allows anyone working on the project to run the build using the same version of Gradle, regardless of whether they have Gradle installed on their system.
+To use the Gradle Wrapper in your Kotlin and Android project, you need to include it in your project's root directory. You can then run Gradle commands using the gradlew script (on Unix-based systems) or gradlew.bat script (on Windows systems) instead of running gradle directly. The Gradle Wrapper will download and use the correct version of Gradle specified in your project's build configuration files (such as build.gradle or settings.gradle).
+Using the Gradle Wrapper ensures that everyone working on your project is using the same version of Gradle, which can help avoid version conflicts and build issues.

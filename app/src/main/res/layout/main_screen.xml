@@ -111,6 +111,39 @@
         app:layout_constraintVertical_bias="0.639" />
 
     <Button
+        android:id="@+id/go_to_recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to recycler view Screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71" />
+
+    <Button
+        android:id="@+id/go_to_coroutinesView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to coroutines view Screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <Button
+        android:id="@+id/go_to_viewModeScopeUseCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to user repo view Screen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78" />
+
+    <Button
         android:id="@+id/btnOffers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,0 +1,37 @@
+in computer science there are two types of methods for multitasking to manage multiple concurrent processes
+1.OS controls  the switch b/w processes
+2.cooperative multitasking -> in which processes control their behaviour by themself
+
+coroutines are software components that create subroutines for cooperative multitasking
+
+about subroutines : Subroutines, also known as subprograms, are self-contained blocks of code that perform a specific task within a larger program. They are a fundamental concept in programming and are used to organize and modularize code.
+                   Subroutines allow you to write a block of code once and then reuse it throughout your program without having to rewrite it every time you need to perform a particular task. This makes your code more efficient, easier to maintain, and more readable.
+
+Coroutines are a feature in Kotlin that allow for asynchronous and concurrent programming. They provide a way to write asynchronous code that looks and behaves like synchronous code, making it easier to reason about and write.
+Coroutines are lightweight threads that can be created and destroyed quickly and efficiently. They are cooperatively scheduled, meaning that they rely on the programmer to specify points in the code where they should yield control to other coroutines. This allows for efficient use of system resources and helps to prevent the creation of unnecessary threads.
+Coroutines can be used for a variety of tasks, such as network or disk I/O, database operations, and long-running computations. They are particularly useful in Android development, where they can be used to perform background tasks without blocking the main UI thread.
+To use coroutines in Kotlin, you need to use the kotlinx.coroutines library, which provides a set of APIs for working with coroutines. You can create coroutines using the launch and async functions, which allow you to run code asynchronously and return results, respectively. You can also use various other functions and constructs to control the flow of execution within a coroutine, such as delay, yield, and withContext.
+Overall, coroutines provide a powerful and flexible way to write asynchronous and concurrent code in Kotlin, making it easier to write efficient and responsive applications.
+
+we can execute multiple coroutines in a single thread and a coroutine can be switched between threads that means coroutine can be suspended from one thread and resumed from another thread
+
+Coroutines api now replace all the older method like RxJava ,AsyncTask, Executors , HandlerThreads ,intentServices
+
+Q.Why do we need async programming ?
+ans.In addition to handling user input, the main thread on a phone also has many other tasks to perform, such as parsing XML, inflating view components, and drawing them on the screen. This means that the main thread is responsible for both handling user input and updating the display, which can be a lot of work.
+    To ensure that the display is updated quickly and efficiently, phone manufacturers use async programming techniques such as multithreading to offload some of the work from the main thread. For example, when a user scrolls through a list of items, the phone may start a background thread to handle the display updates while the main thread continues to handle other tasks, such as parsing XML and inflating view components.
+    By using multithreading, the phone can update the display in real-time without blocking the main thread, which can result in a smoother and more responsive user experience. Additionally, by using techniques such as double buffering, the phone can further optimize the display updates by rendering the next frame in the background while displaying the current frame.
+    Overall, async programming is an important technique used in phone refresh rates to ensure that the display is updated quickly and efficiently, while still allowing the main thread to handle other tasks such as parsing XML, inflating view components, and listening for user input.
+->So we should always implement long tasks async in a separate thread
+
+Q.So what about runnable we learned in mediaPLayer implementation?
+ans.In Kotlin, a coroutine is a lightweight thread that can be used to perform async programming, while Runnable is an interface that represents a task that can be executed on a thread.
+    The key difference between coroutines and Runnable is that coroutines are more efficient and easier to use. Here are a few ways in which coroutines differ from Runnable:
+
+    1.Coroutines are lightweight: Coroutines are much lighter than threads. While a thread requires its own stack, coroutines can be executed on a single thread, allowing you to perform async programming without creating too many threads.
+    2.Coroutines are cooperative: Coroutines are cooperative, which means that they can be paused and resumed. This allows you to write code that looks and behaves like synchronous code, but is executed asynchronously in the background.
+    3.Coroutines use structured concurrency: Coroutines use structured concurrency, which means that they are organized into hierarchies. This allows you to write code that is easier to reason about, since you can easily track the lifecycle of each coroutine.
+    4.Coroutines support cancellation: Coroutines support cancellation, which means that you can stop a coroutine from running before it completes. This can be useful for managing resources and preventing memory leaks.
+
+    On the other hand, Runnable is a simple interface that represents a task that can be executed on a thread. Runnable can be used to perform async programming, but it requires you to manage threads explicitly,this means that you need to create and start a thread explicitly to execute the Runnable. and can be less efficient than using coroutines.
+    Overall, coroutines are a more efficient and easier-to-use approach to async programming in Kotlin. While Runnable can be used to perform similar tasks, coroutines offer several advantages, such as being lightweight, cooperative, and supporting structured concurrency and cancellation.

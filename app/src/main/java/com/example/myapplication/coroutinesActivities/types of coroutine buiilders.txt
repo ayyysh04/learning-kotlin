@@ -1,0 +1,20 @@
+In Kotlin, coroutines are created using coroutine builders. There are several coroutine builders available, each with its own specific use case. Here are the most commonly used coroutine builders in Kotlin:
+
+    1.launch: This coroutine builder is used for launching a new coroutine without blocking the current thread. It is used when you need to start a long-running task in the background.It return a instance of Job ,which can be used as a reference to the coroutine to track / cancel the coroutine.used for for coroutines which don't have any result as return value
+
+    2.async: This coroutine builder is used for launching a new coroutine that returns a result. It is used when you need to start a long-running task in the background and retrieve its result later.It also allows launching coroutines parallel and return result of type Deferred of type of the result and Defer interface is extension of job instance ,so we can also track the coroutine
+
+    3.runBlocking: This coroutine builder is used to block the current thread until the coroutine it launches completes. It is often used in testing or when you need to call a suspending function from a non-suspending context.This will block the thread while the coroutine is executing and return the result
+
+    4.withContext: This coroutine builder is used to switch to a different dispatcher context within a coroutine. It is often used to perform operations that require a different dispatcher, such as I/O operations.
+
+    5.produce: This coroutine builder is used for creating a coroutine that produces a stream of values. It is used when you need to create a data stream that can be consumed by other coroutines.return instance of received channel
+
+    6.actor: This coroutine builder is used for creating a coroutine that consumes a stream of values. It is used when you need to create a coroutine that receives and processes data from a data stream.
+
+These are just a few of the coroutine builders available in Kotlin. By choosing the appropriate coroutine builder for your use case, you can write asynchronous, non-blocking code that is efficient and easy to read.
+
+
+
+
+

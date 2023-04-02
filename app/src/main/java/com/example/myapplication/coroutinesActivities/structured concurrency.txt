@@ -1,0 +1,7 @@
+Structured concurrency is a programming paradigm that provides a way to organize and manage concurrent tasks in a structured and predictable way. It is an alternative to unstructured concurrency, where threads or processes are created and managed independently, often leading to issues like race conditions, deadlocks, and resource leaks.
+
+In structured concurrency, tasks are structured hierarchically and are created and executed within a specific scope. The tasks within a scope are executed in a way that guarantees that they are all completed before the scope exits. This ensures that all resources used by the tasks are released properly and that any errors or exceptions are handled appropriately.
+
+In the context of Kotlin coroutines, structured concurrency is achieved through the use of coroutine scopes to avoid leaks and to manage them productively. A coroutine scope is a context in which a group of related coroutines are launched, and it ensures that all coroutines launched within the scope are completed before the scope is exited.
+
+By using structured concurrency, developers can write more predictable and reliable concurrent code, with fewer issues related to synchronization, resource management, and error handling. It also simplifies the process of writing concurrent code, as the structure provides a clear and intuitive way to organize and manage concurrent tasks.

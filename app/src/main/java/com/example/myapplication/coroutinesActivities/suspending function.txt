@@ -1,0 +1,22 @@
+In Kotlin coroutines, when a coroutine is suspended, the current stack frame of the function is copied and saved in memory. This means that all the local variables and state of the function are saved, and when the coroutine is resumed, it starts running again from where it left off.
+This is possible because coroutines are lightweight threads that are implemented using the same thread as the caller. When a coroutine is suspended, the thread is free to perform other tasks, and when the coroutine is resumed, it continues executing on the same thread.
+This feature is important for performance and efficiency, as it allows coroutines to perform non-blocking I/O and other long-running operations without blocking the main thread or creating new threads. It also makes it easy to write code that is both asynchronous and easy to read and maintain, as the flow of execution is clear and easy to follow.
+Overall, Kotlin coroutines provide a powerful and flexible way to write non-blocking, asynchronous code that is efficient, easy to read, and easy to maintain.
+
+kotlin coroutines api provides suspending function eg:
+withContext
+withTimeout
+withTimeoutOrNull
+join
+delay
+await
+supervisorScope
+etc
+
+So whenever calling this function ,mark your calling function as suspend modifier
+
+A COROUTINE CAN INVOKE BOTH SUSPENDING AND NON BLOCKING FUNCTIONS
+BUT A SUSPENDING FUNCTION CAN BE INVOKED FROM A COROUTINE BLOCK OR FROM AN ANOTHER SUSPENDING FUNCTION ONLY
+
+WE US SUSPENDING FUNCTIONS TO AVOID THREAT BLOCKING AND PROVIDE UNINTERRUPTED USER EXPERIENCE
+

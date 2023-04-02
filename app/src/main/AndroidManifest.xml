@@ -9,10 +9,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".LiveDataActivity"
+            android:name=".coroutinesActivities.CoroutinesActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewModelActivity"
+            android:name=".viewModelScopeUsage.UserRepoView"
+            android:exported="false" />
+        <activity
+            android:name=".viewModelScopeUsage.recyclerview.RecyclerViewLogic"
+            android:exported="false" />
+        <activity
+            android:name=".livedata.LiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewModel.ViewModelActivity"
             android:exported="false" />
         <activity
             android:name=".VideoPlayer"
@@ -24,7 +33,7 @@
             android:name=".BmiCalculator"
             android:exported="false" />
         <activity
-            android:name=".SharedPrefrenceLogic"
+            android:name=".SharedPreferenceLogic"
             android:exported="false" /> <!-- Second activity -->
         <activity android:name=".SecondActivity">
 
@@ -36,7 +45,9 @@
             -->
             <!-- </intent-filter> -->
         </activity> <!-- .main_logic : connects to kotlin class ,not to xml file -->
-        <activity android:name=".MainLogic">
+        <activity
+            android:name=".MainLogic"
+            android:exported="true">
 
             <!-- defineds that this is the homepage or launcher activity -->
             <intent-filter>

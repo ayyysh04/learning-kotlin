@@ -13,6 +13,10 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.coroutinesActivities.CoroutinesActivity
+import com.example.myapplication.viewModelScopeUsage.recyclerview.RecyclerViewLogic
+import com.example.myapplication.viewModel.ViewModelActivity
+import com.example.myapplication.viewModelScopeUsage.UserRepoView
 
 //AppCompactactivity : provides lifecycle override function like onCreate
 class MainLogic : AppCompatActivity() {
@@ -31,6 +35,9 @@ class MainLogic : AppCompatActivity() {
         val mediaPlayerButton = findViewById<Button>(R.id.go_to_mediaPLayer)
         val videoPlayerButton = findViewById<Button>(R.id.go_to_videoPlayer)
         val viewModelButton = findViewById<Button>(R.id.go_to_ViewModel)
+        val recyclerViewButton = findViewById<Button>(R.id.go_to_recyclerView)
+        val coroutinesViewButton = findViewById<Button>(R.id.go_to_coroutinesView)
+        val viewModelScopeUseCaseButton = findViewById<Button>(R.id.go_to_viewModeScopeUseCase)
         var enteredName = ""
 //        setOnClickListner to listen to changes on button
         submitButton.setOnClickListener {
@@ -63,7 +70,7 @@ class MainLogic : AppCompatActivity() {
         }
 
         sharedPrefsButton.setOnClickListener {
-            val intent = Intent(this, SharedPrefrenceLogic::class.java)
+            val intent = Intent(this, SharedPreferenceLogic::class.java)
             startActivity(intent)
         }
         bmiCalButton.setOnClickListener {
@@ -80,6 +87,18 @@ class MainLogic : AppCompatActivity() {
         }
         viewModelButton.setOnClickListener {
             val intent = Intent(this, ViewModelActivity::class.java)
+            startActivity(intent)
+        }
+        recyclerViewButton.setOnClickListener {
+            val intent = Intent(this, RecyclerViewLogic::class.java)
+            startActivity(intent)
+        }
+        coroutinesViewButton.setOnClickListener {
+            val intent = Intent(this, CoroutinesActivity::class.java)
+            startActivity(intent)
+        }
+        viewModelScopeUseCaseButton.setOnClickListener {
+            val intent = Intent(this, UserRepoView::class.java)
             startActivity(intent)
         }
 

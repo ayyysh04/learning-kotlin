@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-class SharedPrefrenceLogic : AppCompatActivity() {
+class SharedPreferenceLogic : AppCompatActivity() {
     //    EditText widget for TextInputLayout
 //    TextView widget for TextView
     private lateinit var nameText: EditText

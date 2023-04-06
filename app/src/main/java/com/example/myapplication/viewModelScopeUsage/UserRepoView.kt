@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.viewModelScopeUsage.recyclerview.UserRecyclerViewAdapter
 
 class UserRepoView : AppCompatActivity() {
     //    get viewModel Instance using viewModel Provider

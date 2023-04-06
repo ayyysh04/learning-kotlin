@@ -1,0 +1,6 @@
+Q.what happen if we findViewById and change the value of widget which not existing in our view or not creted yet
+
+If you try to call findViewById to get a reference to a widget that does not exist in your view or has not been created yet, it will return null. If you then try to modify the value of the widget using this null reference, you will get a NullPointerException.
+For example, suppose you have a layout file that includes a TextView widget with the id text_view. If you call findViewById(R.id.text_view) on this layout, you will get a reference to the TextView widget and you can modify its properties, such as its text or color.
+However, if you try to call findViewById(R.id.non_existent_widget) on this layout, you will get null. If you then try to modify the value of the widget using this null reference, such as by calling setText("Hello"), you will get a NullPointerException at runtime, because the reference is null and you cannot call methods on a null object.
+To avoid this issue, you should make sure that the widget you are trying to modify actually exists in your view hierarchy and has been created before calling findViewById and trying to modify its properties. You can do this by ensuring that the view hierarchy has been inflated and the widgets have been created before calling findViewById and modifying their properties.

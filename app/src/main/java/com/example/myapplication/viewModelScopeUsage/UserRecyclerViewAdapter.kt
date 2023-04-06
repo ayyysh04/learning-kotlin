@@ -1,4 +1,4 @@
-package com.example.myapplication.viewModelScopeUsage.recyclerview
+package com.example.myapplication.viewModelScopeUsage
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.myapplication.R
-import com.example.myapplication.viewModelScopeUsage.User
 
 class UserRecyclerViewAdapter(
     private val userList: List<User>,

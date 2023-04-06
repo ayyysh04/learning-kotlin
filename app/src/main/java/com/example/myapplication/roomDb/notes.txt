@@ -1,0 +1,12 @@
+To store permanent data in app -> use SQlite
+Them Room introduced with object related string build over Sqlite
+
+Room is a persistence library provided by Android Jetpack to handle local data storage on Android devices. To use Room, we need to define three code components which acts as data layer(the data layer is a concept that refers to the layer of an application that manages the storage and retrieval of data. In the context of Room database, the data layer consists of the classes and components that are responsible for managing the storage and retrieval of data from the database.):
+
+    1.Room Entity Class:This is a class that represents a table within the database. It typically has variables that represent columns in the table and annotations that provide additional information about the columns. The Entity class defines the schema of the table, including the name of the table, the name of the columns, and the data types of the columns.
+
+    2.DAO Interface:DAO stands for Data Access Object. It is an interface that defines the methods for accessing the data in the database. Each method in the DAO interface corresponds to a SQL query that operates on the table. The DAO interface acts as a bridge between the entity class and the database, allowing us to perform CRUD (Create, Read, Update, Delete) operations on the data.
+
+    3.Room Database Class:This is a class that represents the database itself. It is an abstract class that extends the RoomDatabase class and includes a method that returns an instance of the DAO interface. The Room database class is responsible for creating and managing the database, including handling migrations, and it provides the main access point to the database.
+
+In summary, the Entity class defines the schema of the table, the DAO interface provides the methods to access the data in the table, and the Room Database class manages the database and provides the main access point to the data. Together, these three components allow us to use Room to handle local data storage on Android devices.

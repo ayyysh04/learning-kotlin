@@ -1,0 +1,40 @@
+In programming, an abstract class is a class that cannot be instantiated directly, but is meant to be extended by other classes. An abstract class can contain both abstract and non-abstract methods.
+
+Here's an example:
+
+abstract class Animal {
+    abstract fun makeSound()
+
+    fun eat() {
+        println("The animal is eating.")
+    }
+}
+
+class Dog : Animal() {
+    override fun makeSound() {
+        println("Woof woof!")
+    }
+}
+
+class Cat : Animal() {
+    override fun makeSound() {
+        println("Meow meow!")
+    }
+}
+In this example, Animal is an abstract class that defines an abstract method makeSound() and a non-abstract method eat(). The makeSound() method is abstract because it does not have an implementation in the Animal class. Instead, it must be implemented by any class that extends Animal. The eat() method is non-abstract because it has an implementation in the Animal class.
+
+The Dog and Cat classes extend the Animal class and implement the makeSound() method. They also inherit the eat() method from the Animal class.
+
+fun main() {
+    val dog = Dog()
+    val cat = Cat()
+
+    dog.makeSound() // Output: Woof woof!
+    dog.eat() // Output: The animal is eating.
+
+    cat.makeSound() // Output: Meow meow!
+    cat.eat() // Output: The animal is eating.
+}
+In the main() function, we create instances of Dog and Cat and call their methods. Since Dog and Cat extend the Animal class, they inherit its methods, and we can call makeSound() and eat() on them.
+
+In summary, an abstract class in Kotlin is a class that cannot be instantiated directly, but is meant to be extended by other classes. It can contain both abstract and non-abstract methods. Abstract methods do not have an implementation in the abstract class and must be implemented by any class that extends it.

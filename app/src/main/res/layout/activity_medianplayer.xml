@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".MediaPlayer">
+    tools:context=".MediaPlayer"
+    tools:viewBindingIgnore="true">
+    <!--    to avoid generating viewbinding class for this activity-->
 
     <ImageView
         android:id="@+id/imageView"

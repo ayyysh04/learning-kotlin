@@ -1,0 +1,21 @@
+In Kotlin, the @Volatile annotation is used to indicate that a variable's value might be modified by multiple threads simultaneously, and therefore, any changes to its value should be immediately visible to other threads.
+
+Here's an example:
+
+@Volatile var running = false
+
+fun start() {
+    running = true
+    while (running) {
+        // Do something
+    }
+}
+
+fun stop() {
+    running = false
+}
+In the above code, the @Volatile annotation is used to mark the running variable as volatile. This indicates that any changes made to the running variable should be immediately visible to other threads.
+
+The start function sets the running variable to true and then enters into an infinite loop, where it does some work. The stop function sets the running variable to false, which causes the start function to exit the infinite loop and stop doing work.
+
+Without the @Volatile annotation, the changes made to the running variable in the stop function might not be immediately visible to the start function running on a separate thread, and it might continue running even though it should have stopped.

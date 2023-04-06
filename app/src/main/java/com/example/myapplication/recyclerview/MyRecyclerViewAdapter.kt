@@ -1,4 +1,4 @@
-package com.example.myapplication.viewModelScopeUsage.recyclerview
+package com.example.myapplication.recyclerview
 
 import android.view.LayoutInflater
 import android.view.View

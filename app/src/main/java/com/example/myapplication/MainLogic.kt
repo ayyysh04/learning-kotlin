@@ -14,7 +14,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.coroutinesActivities.CoroutinesActivity
-import com.example.myapplication.viewModelScopeUsage.recyclerview.RecyclerViewLogic
+import com.example.myapplication.recyclerview.RecyclerViewLogic
+import com.example.myapplication.roomDb.RoomDbActivity
+import com.example.myapplication.viewBinding.ViewBindingActivity
+import com.example.myapplication.viewBinding.challenge.RecyclerViewBinding
 import com.example.myapplication.viewModel.ViewModelActivity
 import com.example.myapplication.viewModelScopeUsage.UserRepoView
 
@@ -24,6 +27,8 @@ class MainLogic : AppCompatActivity() {
         //savedInstance is the bundle or previous state which was paused if any
         super.onCreate(savedInstanceState)//overrides the parent class
         setContentView(R.layout.main_screen)//set the xml desgin on screen
+//        R.layout to access XML file
+//        R.id to access id assigned to XML componenets
         val greetingTextView =
             findViewById<TextView>(R.id.tvHello)//findViewById to get access to the element by id
 //        R is a global varibale
@@ -38,6 +43,9 @@ class MainLogic : AppCompatActivity() {
         val recyclerViewButton = findViewById<Button>(R.id.go_to_recyclerView)
         val coroutinesViewButton = findViewById<Button>(R.id.go_to_coroutinesView)
         val viewModelScopeUseCaseButton = findViewById<Button>(R.id.go_to_viewModeScopeUseCase)
+        val roomDbButton = findViewById<Button>(R.id.go_to_roomDb)
+        val viewBindingButton = findViewById<Button>(R.id.go_to_viewBinding)
+        val recyclerViewBindingButton = findViewById<Button>(R.id.go_to_recyclerViewBinding)
         var enteredName = ""
 //        setOnClickListner to listen to changes on button
         submitButton.setOnClickListener {
@@ -50,7 +58,11 @@ class MainLogic : AppCompatActivity() {
 //                    uses context : you can use this or this@MainLogic or applicationContext
 //                    but applicationContext is linked with the context of whole app lifecycle
 //                    whereas this gives the context of this activity only
-
+//In Android development, there are two types of contexts: ApplicationContext and ActivityContext.
+//
+//The ApplicationContext is a global context for the entire application, and it is available throughout the lifecycle of the application. It is commonly used for operations that require a context beyond the scope of an activity, such as accessing system services, registering broadcast receivers, and creating new threads.
+//On the other hand, the ActivityContext is a context that is tied to a specific activity. It provides access to the activity's resources, such as layouts, strings, and themes, and it is used to create and manage UI components within the activity, such as views, dialogs, and notifications.
+//It's important to note that while both ApplicationContext and ActivityContext are Context objects, they have different lifecycles and usage patterns. In general, it is recommended to use the ApplicationContext when possible, and to use the ActivityContext only when necessary for operations specific to a particular activity.
                     this,
                     "Please, enter your name!",
                     Toast.LENGTH_SHORT
@@ -99,6 +111,18 @@ class MainLogic : AppCompatActivity() {
         }
         viewModelScopeUseCaseButton.setOnClickListener {
             val intent = Intent(this, UserRepoView::class.java)
+            startActivity(intent)
+        }
+        roomDbButton.setOnClickListener {
+            val intent = Intent(this, RoomDbActivity::class.java)
+            startActivity(intent)
+        }
+        viewBindingButton.setOnClickListener {
+            val intent = Intent(this, ViewBindingActivity::class.java)
+            startActivity(intent)
+        }
+        recyclerViewBindingButton.setOnClickListener {
+            val intent = Intent(this, RecyclerViewBinding::class.java)
             startActivity(intent)
         }
 

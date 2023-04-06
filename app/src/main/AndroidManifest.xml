@@ -9,13 +9,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".viewBinding.challenge.RecyclerViewBinding"
+            android:exported="false" />
+        <activity
+            android:name=".viewBinding.ViewBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".roomDb.RoomDbActivity"
+            android:exported="false" />
+        <activity
             android:name=".coroutinesActivities.CoroutinesActivity"
             android:exported="false" />
         <activity
             android:name=".viewModelScopeUsage.UserRepoView"
             android:exported="false" />
         <activity
-            android:name=".viewModelScopeUsage.recyclerview.RecyclerViewLogic"
+            android:name=".recyclerview.RecyclerViewLogic"
             android:exported="false" />
         <activity
             android:name=".livedata.LiveDataActivity"

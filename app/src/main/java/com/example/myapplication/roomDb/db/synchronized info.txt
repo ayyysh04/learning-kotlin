@@ -1,0 +1,27 @@
+In Kotlin, the synchronized keyword is used to ensure that only one thread can access a block of code at a time.
+
+When a block of code is synchronized, a thread that wants to execute that block must first acquire a lock on the object that the synchronized keyword is applied to. Only one thread can hold the lock at any given time. If another thread tries to execute the same block of code while the lock is held, it will be blocked until the lock is released.
+
+Here's an example:
+
+class Counter {
+    private var count = 0
+
+    fun increment() {
+        synchronized(this) {
+            count++
+        }
+    }
+
+    fun getCount(): Int {
+        synchronized(this) {
+            return count
+        }
+    }
+}
+
+In the above code, the increment() and getCount() methods are synchronized on the this object. This ensures that only one thread can execute these methods at a time. If one thread is currently executing the increment() method, another thread that tries to call the increment() or getCount() method will be blocked until the lock is released.
+
+The synchronized keyword is often used to protect shared resources that can be accessed by multiple threads simultaneously. By synchronizing access to these resources, we can avoid race conditions and other synchronization issues that can arise when multiple threads try to access the same resource simultaneously.
+
+However, it's worth noting that the synchronized keyword can also introduce performance issues if overused, since it can potentially cause unnecessary blocking of threads. Therefore, it's important to use synchronized judiciously and only where it's necessary to ensure thread safety.

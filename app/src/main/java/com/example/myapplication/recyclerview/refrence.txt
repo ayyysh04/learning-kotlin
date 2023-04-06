@@ -1,4 +1,15 @@
-a quick reference for setting up a RecyclerView with an adapter:
+In short : 1.create xml with recycler View
+            2.create xml layout for each item
+            3.create recycler view adapter class -> just define it
+            4.create recyclerViewHolder class that holds the view of each item -> set the data of item here using setter function and calling of clickEvents
+            NOTE:don't set the data ,data should be ideally set when onBindViewHolder calls the ViewHolder setter function
+            5.extent adapter to view-holder and implement the three override function :
+                a.onCreateViewHolder : create a view holder -> to get the layoutinflator of item and inflate the layout with the view-holder class and return it
+                b.onBindViewHolder : bind the view holder -> to Bind the view with the data using viewHolder class implemented setter function
+                c.getItemCount : just return the list length
+            6.in main Activity-> get the recyclerView ,set the layoutManager and adapter with the data and other function
+
+In brief :a quick reference for setting up a RecyclerView with an adapter:
 	1.Define the RecyclerView in your layout XML file:
 		<androidx.recyclerview.widget.RecyclerView
     		android:id="@+id/recyclerview"

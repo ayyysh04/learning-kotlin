@@ -1,0 +1,7 @@
+An IntentFilter is used to specify what type of broadcasts an app is interested in receiving. It is a filter that is used to match the actions, categories, and data types of incoming broadcast intents against those specified in the filter.
+
+When an app registers a BroadcastReceiver with an IntentFilter, the Android system sends broadcasts to the app only if the intent matches the criteria specified in the filter.
+
+For example, in the code snippet you provided, the IntentFilter is created with the action StopWatchService.UPDATED_TIME. This means that the BroadcastReceiver in the MainActivity class that is registered with this filter will only receive broadcasts with the action StopWatchService.UPDATED_TIME. Any other broadcasts sent by the StopWatchService that do not match this action will not be received by the MainActivity BroadcastReceiver.
+
+Using an IntentFilter helps to reduce unnecessary processing in the app by filtering out unwanted broadcasts, and it also provides a way for the app to handle different types of broadcasts separately.

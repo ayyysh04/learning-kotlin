@@ -1,0 +1,10 @@
+The android:exported attribute in the activity element of the AndroidManifest.xml file is used to indicate whether the activity can be launched by components of other applications or not. If the android:exported attribute is set to "true", then other applications can launch this activity. If it is set to "false", then this activity can only be launched by components of the same application.
+
+In the AndroidManifest.xml provided, the MainLogic activity is set as the launcher activity of the application using the intent filter category android.intent.category.LAUNCHER. This means that when the user launches the app, this activity will be the first activity to be displayed on the screen.
+
+In this case, since the android:exported attribute of the MainLogic activity is set to "true", other applications can also launch this activity. This may not be desirable for all activities in the application, so it is important to set this attribute appropriately for each activity. However, for the launcher activity, it is generally necessary to set android:exported to "true" so that other applications can launch the app.
+
+Q.what if the launcher activity exported is set to false?
+ans.If the launcher activity's exported attribute is set to false, the activity can still be launched by the system as the launcher activity, but other applications will not be able to launch it directly using an explicit intent.
+    This means that if another application tries to launch the activity using an explicit intent, it will result in a SecurityException. This is because the launcher activity is an entry point into the application and granting explicit access to it could be a security risk.
+    Therefore, it is recommended to keep the exported attribute of the launcher activity set to true.

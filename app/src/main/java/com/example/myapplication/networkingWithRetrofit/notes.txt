@@ -1,0 +1,57 @@
+->Development of Networking:
+first core android framework libraries were used to implement network communication -> okhttp library -> retrofit library which was build over okhttp library
+
+=>Retrofit is a type-safe HTTP client library for Android and Java developed by Square. It makes it easy to consume RESTful web services by translating the API into Java/Kotlin interfaces. Retrofit simplifies the development of RESTful web service clients, making it easy to retrieve and upload JSON or other structured data. It is one of the most popular libraries for network communication on Android.
+
+The need for Retrofit in Kotlin is that network communication is an essential part of most modern applications, and Retrofit simplifies the process of making network requests and parsing the responses. It allows developers to create clean, concise, and maintainable code for network communication by providing an easy-to-use API for interacting with web services.
+
+In addition to simplifying network communication, Retrofit also provides features like request/response interception, request caching, and support for multiple concurrent requests. It also supports different data formats like JSON, XML, and Protocol Buffers, making it a versatile and flexible library for consuming RESTful web services in Kotlin.
+
+->Here are the general steps to use Retrofit in Kotlin:
+
+1.Add Retrofit and OkHttp dependencies to your app module’s build.gradle file. For example:
+
+dependencies {
+    implementation 'com.squareup.retrofit2:retrofit:2.x.x'
+    implementation 'com.squareup.retrofit2:converter-gson:2.x.x'
+    implementation 'com.squareup.okhttp3:okhttp:4.x.x'
+}
+Make sure to replace 2.x.x and 4.x.x with the latest version numbers.
+
+2.Create a data model class that represents the JSON response that you want to parse. For example:
+
+data class User(val id: Int, val name: String, val email: String)
+
+3.Create an service interface that defines the HTTP endpoints and their parameters. For example:
+
+interface MyApi {
+    @GET("users/{id}")
+    fun getUser(@Path("id") userId: Int): Call<User>
+}
+Note that the @GET annotation specifies the HTTP method (GET), and the @Path annotation specifies a dynamic parameter in the URL.
+
+4.Create a Retrofit instance with a base URL and a converter factory. For example:
+
+val retrofit = Retrofit.Builder()
+    .baseUrl("https://example.com/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .build()
+The GsonConverterFactory is used to parse the JSON response into your data model class.
+
+5.Create an instance of your API interface using the Retrofit instance. For example:
+
+val myApi = retrofit.create(MyApi::class.java)
+
+6.Call the API method and handle the response asynchronously. For example:
+
+myApi.getUser(123).enqueue(object : Callback<User> {
+    override fun onResponse(call: Call<User>, response: Response<User>) {
+        val user = response.body()
+        // Do something with the user
+    }
+
+    override fun onFailure(call: Call<User>, t: Throwable) {
+        // Handle the error
+    }
+})
+Note that the response is handled asynchronously using a callback interface.

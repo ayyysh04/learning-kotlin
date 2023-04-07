@@ -1,4 +1,63 @@
-why do we write ::class.java when passing class as argument ?
+Q.why do we write ::class.java when passing class as argument ?
 In Kotlin, ::class is used to get the class reference of an object or a type. In the context of Android development, when creating a new instance of a ViewModel using the ViewModelProvider class, we need to pass the Class object of the ViewModel to the get() method.
 The syntax MainActivityViewModel::class.java is used to get the Class object of the MainActivityViewModel class. Here, ::class returns a reference to the KClass object of the MainActivityViewModel class, and the .java property returns the corresponding java.lang.Class object.
 here ,In Kotlin, KClass is a class that represents the Kotlin class itself, as opposed to the class instance. It's a reflection class that provides information about a Kotlin class at runtime, such as its name, annotations, visibility, etc.
+
+Q.what does the task executed by gradlew do in terminal when u execute or build an apk?
+This is the output of a build process for an Android application in Gradle. Each line represents a task that is executed as part of the build process.
+
+Here is a brief explanation of each task:
+
+-clean: Deletes the build directory, which contains compiled code and other build artifacts from previous builds.
+-createDebugVariantModel: Creates a data model that describes the debug build variant of the app.
+-preBuild: Executes tasks that need to run before the main build process starts.
+-preDebugBuild: Executes tasks that need to run before the debug build process starts.
+-mergeDebugNativeDebugMetadata: Merges the debug native debug metadata files, which contain information about native code in the app.
+-compileDebugAidl: Compiles AIDL files, which are used for inter-process communication in Android.
+-compileDebugRenderscript: Compiles RenderScript files, which are used for high-performance image processing in Android.
+-generateDebugResValues: Generates resource values for the debug build variant.
+-generateDebugResources: Generates resources for the debug build variant.
+-dataBindingMergeDependencyArtifactsDebug: Merges data binding dependency artifacts for the debug build variant.
+-generateDebugBuildConfig: Generates a build configuration file for the debug build variant.
+-mapDebugSourceSetPaths: Maps source set paths for the debug build variant.
+-createDebugCompatibleScreenManifests: Creates compatible screen manifests for the debug build variant.
+-extractDeepLinksDebug: Extracts deep links for the debug build variant.
+-checkDebugAarMetadata: Checks metadata for AAR dependencies for the debug build variant.
+-processDebugMainManifest: Processes the main manifest file for the debug build variant.
+-processDebugManifest: Processes the manifest files for the debug build variant.
+-mergeDebugShaders: Merges shaders for the debug build variant.
+-compileDebugShaders: Compiles shaders for the debug build variant.
+-generateDebugAssets: Generates assets for the debug build variant.
+-mergeDebugAssets: Merges assets for the debug build variant.
+-javaPreCompileDebug: Pre-compiles Java code for the debug build variant.
+-compressDebugAssets: Compresses assets for the debug build variant.
+-processDebugJavaRes: Processes Java resources for the debug build variant.
+-mergeDebugResources: Merges resources for the debug build variant.
+-desugarDebugFileDependencies: Converts Java bytecode to Java 8-compatible bytecode for file dependencies in the debug build variant.
+-checkDebugDuplicateClasses: Checks for duplicate classes in the debug build variant.
+-dataBindingGenBaseClassesDebug: Generates base classes for data binding in the debug build variant.
+-mergeDebugJniLibFolders: Merges JNI library folders for the debug build variant.
+-mergeDebugNativeLibs: Merges native libraries for the debug build variant.
+-stripDebugDebugSymbols: Strips debug symbols from the debug build variant.
+-validateSigningDebug: Validates the signing configuration for the debug build variant.
+-writeDebugAppMetadata: Writes app metadata for the debug build variant.
+-writeDebugSigningConfigVersions: Writes signing configuration versions for the debug build variant.
+-processDebugManifestForPackage: Processes the manifest file for packaging the debug build variant.
+-processDebugResources: Processes resources for packaging the debug build variant.
+-kaptGenerateStubsDebugKotlin: Generates Kotlin stub files for annotation processing in the debug build variant.
+-kaptDebugKotlin: Processes annotations and generates code in the debug build variant.
+-compileDebugKotlin: Compiles Kotlin code in the debug build variant
+-Task :app:compileDebugJavaWithJavac : This task compiles all the Java code in the debug build variant using the Java compiler. It takes the source files from the src/main/java and src/debug/java directories and generates the corresponding compiled classes in the build/intermediates/javac/debug/classes directory.
+                                        This task is required only if your project contains Java code. If your project contains only Kotlin code, this task will be skipped.
+
+-Task :app:dexBuilderDebug : This task converts the compiled Java and Kotlin classes into Dalvik Executable (DEX) files, which can be executed on Android devices. It uses the DexBuilder tool provided by the Android build tools to generate the DEX files.
+                              The generated DEX files are then combined into a single classes.dex file, which is placed in the build/intermediates/dex/debug directory.
+
+-Task :app:mergeDexDebug : This task merges the DEX files from the app module and its dependencies into a single DEX file. It uses the DexMerger tool provided by the Android build tools to perform the merge.
+                            The merged DEX file is then placed in the build/intermediates/merged_dex/debug directory.
+-Task :app:packageDebug : This task packages all the compiled classes, resources, and other assets into an APK file for the debug build variant. It uses the aapt tool to package the resources, and the zipalign tool to optimize the APK file.
+                            The final APK file is then placed in the build/outputs/apk/debug directory.
+-Task :app:createDebugApkListingFileRedirect : This task generates a redirect file that points to the location of the APK file for the debug build variant. This file is used by the Android Gradle Plugin to locate the APK file when running the app on a connected device or emulator.
+                                                The redirect file is placed in the build/outputs/apk/debug directory.
+-Task :app:assembleDebug : This task assembles all the debug build artifacts for the app. It collects all the compiled classes and resources from the previous tasks and packages them into an APK file.
+                            Once this task is completed successfully, the APK file for the debug build variant is generated and located in the app/build/outputs/apk/debug directory.

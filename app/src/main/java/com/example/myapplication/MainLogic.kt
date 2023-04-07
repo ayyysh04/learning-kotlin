@@ -13,7 +13,10 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.androidServices.AndroidServiceActivity
 import com.example.myapplication.coroutinesActivities.CoroutinesActivity
+import com.example.myapplication.networkingWithRetrofit.RetrofitActivity
+import com.example.myapplication.notificationComponents.NotificationDemoActivity
 import com.example.myapplication.recyclerview.RecyclerViewLogic
 import com.example.myapplication.roomDb.RoomDbActivity
 import com.example.myapplication.viewBinding.ViewBindingActivity
@@ -46,8 +49,11 @@ class MainLogic : AppCompatActivity() {
         val roomDbButton = findViewById<Button>(R.id.go_to_roomDb)
         val viewBindingButton = findViewById<Button>(R.id.go_to_viewBinding)
         val recyclerViewBindingButton = findViewById<Button>(R.id.go_to_recyclerViewBinding)
+        val androidServiceButton = findViewById<Button>(R.id.go_to_androidServiceView)
+        val retrofitNetworkingButton = findViewById<Button>(R.id.go_to_retrofitNetworkView)
+        val notificationButton = findViewById<Button>(R.id.go_to_NotificationView)
         var enteredName = ""
-//        setOnClickListner to listen to changes on button
+//        setOnClickListener to listen to changes on button
         submitButton.setOnClickListener {
             enteredName = inputField.text.toString()
             if (enteredName == "") {
@@ -121,8 +127,20 @@ class MainLogic : AppCompatActivity() {
             val intent = Intent(this, ViewBindingActivity::class.java)
             startActivity(intent)
         }
+        androidServiceButton.setOnClickListener {
+            val intent = Intent(this, AndroidServiceActivity::class.java)
+            startActivity(intent)
+        }
         recyclerViewBindingButton.setOnClickListener {
             val intent = Intent(this, RecyclerViewBinding::class.java)
+            startActivity(intent)
+        }
+        retrofitNetworkingButton.setOnClickListener {
+            val intent = Intent(this, RetrofitActivity::class.java)
+            startActivity(intent)
+        }
+        notificationButton.setOnClickListener {
+            val intent = Intent(this, NotificationDemoActivity::class.java)
             startActivity(intent)
         }
 

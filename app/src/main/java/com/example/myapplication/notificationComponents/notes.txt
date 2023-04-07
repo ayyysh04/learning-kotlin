@@ -1,0 +1,46 @@
+->To show a notification in Kotlin, you can follow these steps:
+
+1.Create a notification channel: Notification channels are used to group notifications together. You need to create a notification channel before showing a notification.
+
+val channelId = "my_channel_01"
+val channelName = "My Channel"
+val importance = NotificationManager.IMPORTANCE_HIGH
+
+val channel = NotificationChannel(channelId, channelName, importance)
+val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+notificationManager.createNotificationChannel(channel)
+
+2.Create a notification builder: A notification builder is used to set the content of the notification.
+
+val builder = NotificationCompat.Builder(this, channelId)
+    .setSmallIcon(R.drawable.notification_icon)
+    .setContentTitle("My notification title")
+    .setContentText("This is my notification content.")
+    .setPriority(NotificationCompat.PRIORITY_HIGH)
+
+3.Show the notification: To show the notification, you need to call the notify() method on the NotificationManager.
+
+val notificationId = 1
+notificationManager.notify(notificationId, builder.build())
+
+
+The full code would look something like this:
+
+val channelId = "my_channel_01"
+val channelName = "My Channel"
+val importance = NotificationManager.IMPORTANCE_HIGH
+
+val channel = NotificationChannel(channelId, channelName, importance)
+val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+notificationManager.createNotificationChannel(channel)
+
+val builder = NotificationCompat.Builder(this, channelId)
+    .setSmallIcon(R.drawable.notification_icon)
+    .setContentTitle("My notification title")
+    .setContentText("This is my notification content.")
+    .setPriority(NotificationCompat.PRIORITY_HIGH)
+
+val notificationId = 1
+notificationManager.notify(notificationId, builder.build())
+
+Note: Make sure to replace R.drawable.notification_icon with your own notification icon.

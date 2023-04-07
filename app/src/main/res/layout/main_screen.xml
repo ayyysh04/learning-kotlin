@@ -199,6 +199,19 @@
         app:layout_constraintVertical_bias="0.263" />
 
     <Button
+        android:id="@+id/go_to_androidServiceView"
+        android:layout_width="158dp"
+        android:layout_height="48dp"
+        android:text="go to android service view"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+    <Button
         android:id="@+id/go_to_viewModeScopeUseCase"
         android:layout_width="175dp"
         android:layout_height="52dp"
@@ -210,5 +223,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45" />
+
+    <Button
+        android:id="@+id/go_to_retrofitNetworkView"
+        android:layout_width="175dp"
+        android:layout_height="52dp"
+        android:text="go to user retrofit view Screen"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.698" />
+
+    <Button
+        android:id="@+id/go_to_NotificationView"
+        android:layout_width="160dp"
+        android:layout_height="44dp"
+        android:text="go to notification view Screen"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.701" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

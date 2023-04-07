@@ -1,0 +1,4 @@
+1.go to File
+2.go to settings
+3.search for hardcoded
+4.untick and save

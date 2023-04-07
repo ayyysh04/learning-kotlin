@@ -1,0 +1,12 @@
+out is a keyword in Kotlin that is used to declare a type parameter as covariant. When a type parameter is declared as out, it means that it can only appear in the output positions of the functions, such as return types or read-only properties.
+
+In the context of Class<out Service>, it means that the Class parameter can refer to any class that is a subclass of Service. This allows you to pass any subclass of Service as an argument to a function that expects a Class<out Service> parameter, without the need for casting or type checking.
+
+For example, if you have a class MyService that extends Service, you can pass MyService::class.java as an argument to a function that expects a Class<out Service> parameter, like this:
+
+fun myFunction(serviceClass: Class<out Service>) {
+    // ...
+}
+
+myFunction(MyService::class.java)
+By using out in the declaration of Class<out Service>, you are telling the Kotlin compiler that this parameter can refer to any subclass of Service, which makes the code more generic and flexible.

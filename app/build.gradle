@@ -1,3 +1,4 @@
+//This section is used to apply plugins to the project. In this case, it applies two plugins: 'com.android.application', which is necessary to build an Android app, and 'kotlin-android', which adds support for Kotlin language in the Android app.
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -5,60 +6,94 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 33 //version of the Android SDK that is used for compiling the app.
     buildToolsVersion "30.0.3"
+    //version of the Android build tools that are used for building the app.
 
-    defaultConfig {
-        applicationId "com.example.myapplication"
-        minSdkVersion 16
+    defaultConfig { // default configuration settings for the app
+        applicationId "com.example.myapplication" //This is the unique identifier for the app.
+        minSdkVersion 16 // This specifies the minimum version of Android that the app can run on.
         targetSdkVersion 33
+        //This specifies the highest version of Android that the app is tested and designed for.
         versionCode 1
-        versionName "1.0"
-        vectorDrawables.useSupportLibrary = true
+        //This is a numeric value used to distinguish different versions of the app. It is incremented each time a new version is released.
+        versionName "1.0" //This is a human-readable string used to identify the version of the app.
+        vectorDrawables.useSupportLibrary = true //e to enable support for vector drawables
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
+//This block specifies different build types, such as debug or release, and their settings.
         release {
-            minifyEnabled false
+            minifyEnabled false //to disable code shrinking and obfuscation
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //This specifies the files used for code shrinking and obfuscation.
         }
     }
-    compileOptions {
+    compileOptions {// This block specifies options for the Java compiler used to build the app.
         sourceCompatibility JavaVersion.VERSION_1_8
+        //This specifies the version of the Java source code that the app is compatible with.
         targetCompatibility JavaVersion.VERSION_1_8
+        //This specifies the version of the Java bytecode that the app is compiled to.
     }
-    kotlinOptions {
+    kotlinOptions {// This block specifies options for the Kotlin compiler used to build the app.
         jvmTarget = '1.8'
+        // This specifies the version of the Java Virtual Machine that the app is compiled to.
     }
+
+//     enable view binding for the project.
     buildFeatures {
         viewBinding true
     }
     viewBinding {
         enabled = true
     }
-    namespace 'com.example.myapplication'
+
+
+    namespace 'com.example.myapplication'//used to define the app's package name
 }
 
 dependencies {
+    //multidex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
     // ViewModel dependency
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     // Coroutine dependency
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4' //main api
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-//support to android related components
+    //support to android related components
+
     //room
     implementation "androidx.room:room-runtime:2.5.1"
     kapt "androidx.room:room-compiler:2.5.1"
     implementation "androidx.room:room-ktx:2.5.1"
 
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    //this json library supports retrofit to convert json data to java or kotlin formats
+
+    //interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
+
+    //livedata
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    kapt "androidx.lifecycle:lifecycle-common-java8:2.6.1"
     implementation 'androidx.core:core-ktx:1.9.0'
+    //Kotlin extensions library for Android, which provides Kotlin extensions for some Android framework classes like Activity and Fragment.
     implementation 'androidx.appcompat:appcompat:1.6.1'
+    //This is the AppCompat library for Android, which provides backward compatibility for new features of Android on older versions of Android.
     implementation 'com.google.android.material:material:1.8.0'
+    // This is the Material Design library for Android, which provides pre-built UI components for Android apps.
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:'
+    // This is the ConstraintLayout library for Android, which provides a flexible layout manager for Android apps.
+    testImplementation 'junit:junit:' // This is the JUnit testing framework for Java.
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    // This is the JUnit extension library for Android, which provides additional testing capabilities for Android apps
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    //This is the Espresso testing library for Android, which provides UI testing capabilities for Android apps.
 }
 // app level build.gradle : for dependency and plugin addition
-//android-ktx is the set of kotlin extention that are included with android jetpack that provide even more concise idiomatic kotlin to jetpacks and android platforms api
+//android-ktx is the set of kotlin extension that are included with android jetpack that provide even more concise idiomatic kotlin to jetpacks and android platforms api

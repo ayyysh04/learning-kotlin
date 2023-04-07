@@ -1,0 +1,40 @@
+Custom LiveData Class learned in prev lectures
+
+class LiveDataActivityViewModel : ViewModel() {
+    val albumsLiveData: MutableLiveData<List<Album>> = MutableLiveData()
+
+    init {
+        viewModelScope.launch {
+            val response = withContext(Dispatchers.IO) {
+                // perform a network call using Retrofit
+                val retService = RetrofitInstance.getRetrofitInstance().create(ApiService::class.java)
+                retService.getAlbums()
+            }
+            if (response.isSuccessful) {
+                albumsLiveData.postValue(response.body())
+            }
+        }
+    }
+}
+
+Coroutine live Data
+ val responseLiveData: LiveData<Response<Albums>> = liveData {
+            val response = retService.getSortedAlbums(3)
+            emit(response)
+        }
+
+Difference between both :
+LiveData is a class in the Android Architecture Components library that's used to hold and observe data that changes over time. MutableLiveData is a subclass of LiveData that allows the data held by the LiveData object to be modified.
+
+LiveData implemented using ViewModel and MutableLiveData can be used to hold data in a ViewModel that can be updated in response to user actions or other events. It's typically used to store data that's bound to the UI, such as user input or data retrieved from a database or network. LiveData is observed using the observer pattern, and when the data changes, any observers registered with the LiveData object are notified and can update the UI accordingly.
+
+CoroutineLiveData is a custom implementation of LiveData that's designed to work with coroutines. It's a type of LiveData that emits values asynchronously and is useful for situations where you want to perform long-running operations and update the UI with the result.
+
+The main difference between LiveData implemented using ViewModel and MutableLiveData and CoroutineLiveData is that CoroutineLiveData is designed to work with coroutines and provides a simpler and more efficient way to handle asynchronous operations. CoroutineLiveData also uses coroutines to emit values asynchronously, which can help to reduce the amount of boilerplate code that's required when working with LiveData and coroutines.
+
+In terms of output, both implementations can be used to hold and observe data that changes over time. However, CoroutineLiveData is designed specifically for working with coroutines and can provide a simpler and more efficient way to handle asynchronous operations.
+
+
+
+
+

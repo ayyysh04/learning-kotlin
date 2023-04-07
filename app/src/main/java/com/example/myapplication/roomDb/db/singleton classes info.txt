@@ -1,3 +1,62 @@
+Q.how to create a singleton class in kotlin ?
+To create a singleton class in Kotlin, you can use the object keyword. An object is a singleton in Kotlin that is lazily initialized on the first access, and it guarantees thread-safety.
+
+Here's an example of a singleton class in Kotlin:
+
+object MySingleton {
+    init {
+        println("Singleton class initialized.")
+    }
+
+    fun doSomething() {
+        println("Singleton method called.")
+    }
+}
+
+In this example, the object keyword is used to create a singleton class named MySingleton. The init block is executed when the singleton is initialized. The doSomething() method is a singleton method that can be called on the singleton object.
+
+To use the singleton class, you can call its methods directly using the class name, like this:
+    MySingleton.doSomething()
+This will output:
+    Singleton class initialized.
+    Singleton method called.
+
+Note that the init block is only executed once, the first time the MySingleton object is accessed. Subsequent accesses will reuse the same object and the init block won't be executed again.
+
+Q.can we use companion to make any class singleton ?
+Yes, you can use a companion object to create a singleton instance of a class in Kotlin. By creating an object inside the companion object, you can ensure that only one instance of that object is created and shared across the entire application.
+
+Here's an example of how you can create a singleton instance of a class using a companion object in Kotlin:
+
+class MySingleton {
+    companion object {
+        private val INSTANCE = MySingleton()
+
+        fun getInstance(): MySingleton {
+            return INSTANCE
+        }
+    }
+
+    init {
+        println("Singleton instance created.")
+    }
+
+    fun doSomething() {
+        println("Singleton method called.")
+    }
+}
+In this example, the MySingleton class has a private constructor to prevent it from being instantiated directly. Instead, the class has a companion object that contains a private, static instance of the MySingleton class. The getInstance() method is used to retrieve the singleton instance of the MySingleton class.
+
+To use the singleton instance, you can call its methods using the getInstance() method, like this:
+
+val singleton = MySingleton.getInstance()
+singleton.doSomething()
+
+This will output:
+    Singleton instance created.
+    Singleton method called.
+Note that the init block inside the MySingleton class is executed only once when the singleton instance is created for the first time. Subsequent calls to the getInstance() method will return the same instance of the MySingleton class.
+
 Q.Explain and use of singleton class that extent roomDatabase on kotlin
   In Kotlin, a Singleton class is a design pattern that restricts the instantiation of a class to a single object. In other words, it ensures that only one instance of a class can be created and provides a global point of access to that instance.
 

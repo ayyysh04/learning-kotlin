@@ -16,7 +16,7 @@ class UserViewModel : ViewModel() {
     var users: MutableLiveData<List<User>> = MutableLiveData()
     fun getUserData() {
         viewModelScope.launch {
-            var result: List<User>?
+            var result: List<User>
 //            invoking getUser function of userRepository which is a long running task using coroutine
             withContext(Dispatchers.IO) {
                 result = userRepository.getUsers()

@@ -2,6 +2,8 @@ package com.example.myapplication.livedata
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 
 class LiveDataActivityViewModel : ViewModel() {
     var count = MutableLiveData<Int>()

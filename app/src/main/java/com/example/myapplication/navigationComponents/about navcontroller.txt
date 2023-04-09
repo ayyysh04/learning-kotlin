@@ -1,0 +1,17 @@
+Q.is there any difference between navController accessed by two difference view ?
+ans.
+    No, there is no difference in the NavController accessed by two different views. The NavController is associated with the host activity and is available to all the fragments associated with that activity. The NavController can be accessed using the findNavController() method provided by the Navigation class, which can be called on any view that is associated with the current fragment or activity.
+
+    In the example we discussed earlier,
+     i.e binding.btnSignUp.setOnClickListener {
+                     it.findNavController().navigate(R.id.action_homeFragment_to_nameFragment)
+                 }
+     we used the it keyword to refer to the view that was clicked, which was the button in that case. But we could have also called the findNavController() method directly on the fragment or the activity, like this:
+
+    // Access NavController using the Fragment reference
+    val navController = findNavController()
+
+    // or, access NavController using the Activity reference
+    val navController = requireActivity().findNavController()
+
+    Both of these approaches will give us the same NavController instance, and we can use it to navigate to other destinations in our app. The difference between using it and accessing the NavController directly from the fragment or activity is mainly one of convenience and code organization. Using it can make the code a bit more concise and easier to read in some cases, especially if we have multiple views that need to navigate to different destinations. However, if we only have one view that needs to navigate, it might be simpler and more straightforward to just access the NavController directly from the fragment or activity.

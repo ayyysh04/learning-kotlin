@@ -1,0 +1,17 @@
+Navigation components in Android are a collection of libraries that help developers to manage navigation between different screens or destinations of an app. The main purpose of navigation components is to provide a consistent and predictable user experience across different screens, which is essential for building high-quality mobile apps.
+
+The navigation components consist of mainly three main parts:
+
+1.Navigation graph:
+A navigation graph is an XML resource file that defines the different screens or destinations of an app and the connections between them. The navigation graph provides a visual representation of the app's navigation flow, making it easy for developers to understand and manage the navigation between different screens.
+The navigation graph also defines the start destination of the app, which is the first screen that the user sees when they open the app. Developers can add new destinations to the navigation graph, modify the connections between them, and specify the animation and transition effects for navigating between different screens.
+
+2.NavHost Fragment:
+The NavHost Fragment is a special fragment that serves as a container for displaying different screens or destinations of an app. The NavHost Fragment is responsible for managing the navigation stack, which keeps track of the different screens or destinations that the user has visited.
+When the user navigates to a new screen or destination, the NavHost Fragment replaces the current screen with the new one, and adds the previous screen to the navigation stack. This makes it easy for the user to navigate back to the previous screen by pressing the back button.
+
+3.NavController:
+The NavController is an object that is responsible for managing the navigation between different screens or destinations. Developers can use the NavController to programmatically navigate between different screens or destinations of an app.
+The NavController provides a set of methods for navigating to a specific destination, navigating back to the previous destination, or navigating up to the parent destination. Developers can also use the NavController to pass data between different screens or destinations, which is useful for building dynamic and interactive apps.
+
+In summary, the navigation components in Android consist of a navigation graph, a NavHost Fragment, and a NavController. These three components work together to provide a consistent and predictable user experience across different screens or destinations of an app. By using navigation components, developers can build high-quality mobile apps that are easy to navigate and use.

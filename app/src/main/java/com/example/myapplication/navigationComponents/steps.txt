@@ -1,0 +1,87 @@
+->Here are the main steps to implement Navigation Component with example codes:
+
+1.Add the Navigation Component dependency to your app-level build.gradle file:
+
+dependencies {
+    def nav_version = "2.3.5"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+}
+
+2.Create a new directory called navigation in your res directory.
+
+Create a new XML file called nav_graph.xml in the navigation directory.
+Different Fragments in Nav graph are called navigation destination
+THE HOME SYMBOL SIGNIFIES THE START DESTINATION
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myapp.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.myapp.DetailFragment"
+        android:label="Detail" />
+
+</navigation>
+
+In this example, we have two fragments (HomeFragment and DetailFragment) and one action (action_home_to_detail) that navigates from HomeFragment to DetailFragment.
+
+4.In your activity layout file, add a NavHostFragment to the layout:
+
+<fragment
+    android:id="@+id/nav_host_fragment"
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph" />
+This sets up the NavHostFragment, which is the container for the fragments in the navigation graph.
+
+5.In your activity code, set up the NavController and the ActionBar:
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        navController = findNavController(R.id.nav_host_fragment)
+        setupActionBarWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+}
+The findNavController() method finds the NavController associated with the NavHostFragment. The setupActionBarWithNavController() method sets up the ActionBar with the NavController. The onSupportNavigateUp() method handles the Up button in the ActionBar.
+
+6.In each fragment where you want to navigate to another fragment, use the findNavController() method to get the NavController and then use the navigate() method to navigate to the destination fragment:
+
+class HomeFragment : Fragment() {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        button.setOnClickListener {
+            findNavController().navigate(R.id.action_home_to_detail)
+        }
+
+    }
+
+}
+In this example, we're navigating from the HomeFragment to the destination fragment with ID R.id.action_home_to_detail.
+
+That's it! With these steps, you should now have a working Navigation Component in your app.

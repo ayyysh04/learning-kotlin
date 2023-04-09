@@ -1,0 +1,26 @@
+Q.I can use navigation component ,even if i dont include these dependency why?
+      implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+      implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+Ans.If you are using the Navigation Component in your Android project, you will need to include the dependencies for the Navigation Fragment and Navigation UI libraries. These libraries provide the necessary classes and components for working with the Navigation Component.
+    However, it's possible that these dependencies are already included in your project indirectly, either through transitive dependencies or through other libraries that you have included in your project. If this is the case, you may not need to include the dependencies explicitly in your build.gradle file.
+    For example, if you are using a library that depends on the Navigation Component and has already included the necessary dependencies, you don't need to include them again in your project. In this case, the build system will resolve the dependencies automatically based on the transitive dependencies of your project.
+    That being said, it's always a good practice to include the necessary dependencies explicitly in your build.gradle file to ensure that your project is self-contained and can be built independently.
+
+    the transitive dependency for Navigation Component is likely to be through the Room library.
+    The Room library depends on the following Navigation Component dependencies:
+
+    androidx.navigation:navigation-runtime
+    androidx.navigation:navigation-common
+    androidx.navigation:navigation-safe-args-generator
+    androidx.navigation:navigation-safe-args-gradle-plugin
+    Since you are including Room in your project, these dependencies are likely to be resolved automatically as transitive dependencies of the Room library. Therefore, you don't need to include them explicitly in your build.gradle file.
+
+    Note that transitive dependencies can change depending on the version of the libraries you are using, so it's always a good practice to review the dependency tree of your project to understand which libraries are being included transitively. You can use the "dependencies" task in Gradle to see a tree view of your project's dependencies and their transitive dependencies.
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+<!--These are animation attributes that are used to define the enter and exit animations for transitions between two destinations (fragments or activities) in an Android app that uses the Navigation component.
+1.The app:enterAnim attribute defines the animation that is played when the user navigates to a destination. In this case, the @anim/slide_in_left animation will be played, which means that the destination will slide in from the left.
+2.The app:exitAnim attribute defines the animation that is played when the user navigates away from a destination. In this case, the @anim/slide_in_right animation will be played, which means that the current destination will slide out to the right.
+3.The app:popEnterAnim attribute defines the animation that is played when the user navigates back to a destination using the back button. In this case, the @anim/slide_out_right animation will be played, which means that the previous destination will slide in from the right.
+4.The app:popExitAnim attribute defines the animation that is played when the user navigates away from a destination using the back button. In this case, the @anim/slide_out_left animation will be played, which means that the current destination will slide out to the left.
+-->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myapplication.navigationComponents.HomePageFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_nameFragment"
+            app:destination="@id/nameFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_termsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/push_down_in"
+            app:exitAnim="@anim/push_down_out"
+            app:popEnterAnim="@anim/push_up_in"
+            app:popExitAnim="@anim/push_up_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.example.myapplication.navigationComponents.EmailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email">
+        <action
+            android:id="@+id/action_emailFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.myapplication.navigationComponents.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_termsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/push_down_in"
+            app:exitAnim="@anim/push_down_out"
+            app:popEnterAnim="@anim/push_up_in"
+            app:popExitAnim="@anim/push_up_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.example.myapplication.navigationComponents.TermsFragment"
+        android:label="fragment_terms"
+        tools:layout="@layout/fragment_terms" />
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.example.myapplication.navigationComponents.NameFragment"
+        android:label="fragment_name"
+        tools:layout="@layout/fragment_name">
+        <action
+            android:id="@+id/action_nameFragment_to_emailFragment"
+            app:destination="@id/emailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+</navigation><!--about anim folder : In Android development with Kotlin, it is a common convention to place animation files in the "anim" folder in the "res" directory of your Android project. This is not a strict requirement, but it can help you and other developers on your team organize and locate animation files more easily.
+When you place animation files in the "anim" folder, you can access them in your Kotlin code using the R.anim resource identifier, which makes it easier to reference your animations in your code.
+However, if you prefer to organize your project differently or have specific requirements, you can place your animation files in a different folder within the "res" directory, or even outside of it. The important thing is to make sure you are referencing your animation files correctly in your Kotlin code.
+Overall, while it is not strictly necessary to place animation files in the "anim" folder, it is a best practice that can help improve the organization and maintainability of your Android project.-->
+    <!--about tools:layout -> The tools:layout attribute is used only in the development phase to help you preview the layout of a fragment or activity in the Android Studio layout editor. It is not needed at runtime, and it does not affect the behavior of your app.
+    If you remove the tools:layout attribute from your fragment, it will not affect your app's functionality in any way. However, if you still want to preview your layout in Android Studio, you may need to provide an alternative layout resource file for the layout editor to use. Otherwise, the layout editor may display a blank preview.
+    In summary, you can safely remove the tools:layout attribute from your fragment without affecting your app's runtime behavior. However, you may need to provide an alternative layout resource file for previewing the layout in Android Studio.
+    -->

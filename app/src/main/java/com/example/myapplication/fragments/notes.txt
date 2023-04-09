@@ -1,0 +1,39 @@
+fragments : In Android, a fragment represents a reusable portion of a user interface (UI) or behavior within an Activity. Fragments were introduced to enable developers to create more modular, flexible and reusable UI components, as opposed to creating monolithic activities.
+            Fragments can be used to build complex UI designs that are flexible and can be used across multiple devices. For instance, you can create a UI design that has two fragments on a tablet, while the same design could have just one fragment on a smartphone.
+            Using fragments allows for a better separation of concerns in your code. Instead of having one large activity class that contains all the UI components and business logic, you can have smaller, more focused fragment classes that can be reused across different activities.
+            Fragments also have their own lifecycle, which means that they can respond to user events and changes in the system state, such as screen rotation or the user pressing the home button. This makes it easier to handle different device configurations and user interactions.
+            In summary, fragments are a powerful tool for building modular and reusable UI components that can adapt to different device configurations and system states. They help developers to create more flexible, responsive and maintainable Android apps.
+->But fragments cannot live on their own ,they must be hosted by an activity or another fragment
+->there can be more than one fragment in an activity ,actually fragment represent multiple screen inside an activity
+->fragments have their own lifecycle different from android activity life cycle
+->single activity multiple fragments model is highly recommended and best practice by google for android application development
+->if we are using design patterns such as navigation drawer or tab layouts you need to use fragments and need navigation components
+
+->Fragment lifecycle :https://developer.android.com/guide/fragments/lifecycle
+The Fragment lifecycle consists of a series of callbacks that are triggered by the Android framework as the Fragment moves through different states. Here is a detailed explanation of each stage in the Fragment lifecycle:
+
+-onAttach() - This is called when the Fragment is attached to the Activity. The Fragment can use this callback to initialize variables that require access to the Activity.
+
+-onCreate() - This is called when the Fragment is created. The Fragment can use this callback to perform initialization that should occur only once during the Fragment's lifetime.
+
+-onCreateView() - This is called when the Fragment's UI is being created. The Fragment should inflate its layout here and return the inflated View.
+
+-onViewCreated() - This is called after onCreateView() and can be used to access the Views in the Fragment's layout.
+
+-onActivityCreated() - This is called when the Activity's onCreate() method has returned. The Fragment can use this callback to access the Activity or other Fragments that have already been created.
+
+-onStart() - This is called when the Fragment is visible to the user. The Fragment can use this callback to start animations or other visual effects.
+
+-onResume() - This is called when the Fragment is visible to the user and actively running. The Fragment can use this callback to start background tasks or register broadcast receivers.
+
+-onPause() - This is called when the Fragment is no longer in the foreground and the user is no longer interacting with it. The Fragment should use this callback to clean up resources or save data that might be lost.
+
+-onStop() - This is called when the Fragment is no longer visible to the user. The Fragment should use this callback to stop animations or other visual effects.
+
+-onDestroyView() - This is called when the Fragment's View is being destroyed. The Fragment should use this callback to clean up resources associated with the View.
+
+-onDestroy() - This is called when the Fragment is being destroyed. The Fragment should use this callback to clean up any resources that are not associated with the View.
+
+-onDetach() - This is called when the Fragment is being detached from the Activity. The Fragment should use this callback to clean up any resources that are associated with the Activity.
+
+By understanding the Fragment lifecycle, developers can properly manage their resources and ensure their Fragment-based applications behave correctly.

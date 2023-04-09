@@ -7,7 +7,7 @@
     android:background="@color/layout_background"
     tools:context=".BmiCalculator"
     tools:viewBindingIgnore="true">
-    <!--    to avoid generating viewbinding class for this activity-->
+    <!--    to avoid generating view binding class for this activity-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvWeight"
@@ -181,7 +181,7 @@
         app:layout_constraintVertical_bias="0.885">
         <!--        as here we are aligning the elements in vertical style we can use Linear Layout with vertical orientation-->
         <!--        In linear layout no need to constraint it-->
-        <!--        like in flutter : coloumn : linear layout ( vertical)-->
+        <!--        like in flutter : column : linear layout ( vertical)-->
         <!--        like in flutter : row : linear layout ( horizontal)-->
         <!--        like in flutter : stack : constraint layout -->
         <LinearLayout

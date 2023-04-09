@@ -15,6 +15,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.androidServices.AndroidServiceActivity
 import com.example.myapplication.coroutinesActivities.CoroutinesActivity
+import com.example.myapplication.fragments.NavigationActivity
+import com.example.myapplication.navigationComponents.NavigationComponentActivity
 import com.example.myapplication.networkingWithRetrofit.RetrofitActivity
 import com.example.myapplication.notificationComponents.NotificationDemoActivity
 import com.example.myapplication.recyclerview.RecyclerViewLogic
@@ -52,6 +54,8 @@ class MainLogic : AppCompatActivity() {
         val androidServiceButton = findViewById<Button>(R.id.go_to_androidServiceView)
         val retrofitNetworkingButton = findViewById<Button>(R.id.go_to_retrofitNetworkView)
         val notificationButton = findViewById<Button>(R.id.go_to_NotificationView)
+        val fragmentNavButton = findViewById<Button>(R.id.go_to_fragmentNav)
+        val navigationComponentsButton = findViewById<Button>(R.id.go_to_navigationComponents)
         var enteredName = ""
 //        setOnClickListener to listen to changes on button
         submitButton.setOnClickListener {
@@ -141,6 +145,14 @@ class MainLogic : AppCompatActivity() {
         }
         notificationButton.setOnClickListener {
             val intent = Intent(this, NotificationDemoActivity::class.java)
+            startActivity(intent)
+        }
+        fragmentNavButton.setOnClickListener {
+            val intent = Intent(this, NavigationActivity::class.java)
+            startActivity(intent)
+        }
+        navigationComponentsButton.setOnClickListener {
+            val intent = Intent(this, NavigationComponentActivity::class.java)
             startActivity(intent)
         }
 

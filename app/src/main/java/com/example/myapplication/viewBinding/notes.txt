@@ -16,6 +16,8 @@ android {
         enabled = true
     }
 }
+
+NOTE:Rebuild the project after enable viewBinding otherwise viewBinding class will not get generated
 2.Create a binding object for your layout file by calling the inflate() method on the binding class. This method returns an instance of the binding class, which contains direct references to all the views in the layout.
 
 private lateinit var binding: ActivityMainBinding

@@ -1,11 +1,10 @@
-package com.example.myapplication.livedata
+package com.example.myapplication.livedata.sample1
 
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.R
 
@@ -25,13 +24,15 @@ class LiveDataActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.tvCount)
         val button = findViewById<Button>(R.id.btnCount)
         viewModel = ViewModelProvider(this).get(LiveDataActivityViewModel::class.java)
-        viewModel.count.observe(this, Observer {
+        viewModel.count.observe(this) {
             textView.text = it.toString()
-        })
+        }
 
         button.setOnClickListener {
             viewModel.updateCount() // automatically update the text View Data using above observe function
         }
+
+
     }
 
 }

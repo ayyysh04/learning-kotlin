@@ -8,7 +8,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.R
-import com.example.myapplication.livedata.LiveDataActivity
+import com.example.myapplication.livedata.sample1.LiveDataActivity
+import com.example.myapplication.viewModel.challenge.TotalSumViewModelActivity
 
 //for this counter app , when we rotate the device ,changes current keyboard ,changes language setting ,enable multi window mode,etc the android lifecycle destroy and rebuild this Activity or a fragment
 //in this way application can reload the resources based on newConfiguration
@@ -30,6 +31,7 @@ class ViewModelActivity : AppCompatActivity() {
 //        lifecycle owner is the viewModelActivity
         val textView = findViewById<TextView>(R.id.tvCount)
         val button = findViewById<Button>(R.id.btnCount)
+        val button2 = findViewById<Button>(R.id.go_to_challenge_viewmodel)
 
         textView.text = viewModel.count.toString()
 
@@ -39,6 +41,10 @@ class ViewModelActivity : AppCompatActivity() {
                 viewModel.count.toString() //manually updating textView Data -> better version -> LiveData
         }
 
+        button2.setOnClickListener {
+            val intent = Intent(this, TotalSumViewModelActivity::class.java)
+            startActivity(intent)
+        }
         val liveDataButton = findViewById<Button>(R.id.go_to_live_viewmodel)
         liveDataButton.setOnClickListener {
             val intent = Intent(this, LiveDataActivity::class.java)

@@ -15,8 +15,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.androidServices.AndroidServiceActivity
 import com.example.myapplication.coroutinesActivities.CoroutinesActivity
+import com.example.myapplication.dataBinding.DataBindingActivity
 import com.example.myapplication.fragments.NavigationActivity
-import com.example.myapplication.navigationComponents.NavigationComponentActivity
+import com.example.myapplication.livedata.livedataWithDataBinding.Example1LWDActivity
+import com.example.myapplication.navigationComponents.dataBinding.NavDataBindingActivity
+import com.example.myapplication.navigationComponents.viewBinding.NavViewBindingActivity
 import com.example.myapplication.networkingWithRetrofit.RetrofitActivity
 import com.example.myapplication.notificationComponents.NotificationDemoActivity
 import com.example.myapplication.recyclerview.RecyclerViewLogic
@@ -55,7 +58,10 @@ class MainLogic : AppCompatActivity() {
         val retrofitNetworkingButton = findViewById<Button>(R.id.go_to_retrofitNetworkView)
         val notificationButton = findViewById<Button>(R.id.go_to_NotificationView)
         val fragmentNavButton = findViewById<Button>(R.id.go_to_fragmentNav)
-        val navigationComponentsButton = findViewById<Button>(R.id.go_to_navigationComponents)
+        val navigationVMComponentsButton = findViewById<Button>(R.id.go_to_navigationVMComponents)
+        val navigationDMComponentsButton = findViewById<Button>(R.id.go_to_navigationDMComponents)
+        val dataBindingActivityButton = findViewById<Button>(R.id.go_to_dataBindingActivity)
+        val example1LWDButton = findViewById<Button>(R.id.go_to_Example1LWD)
         var enteredName = ""
 //        setOnClickListener to listen to changes on button
         submitButton.setOnClickListener {
@@ -151,8 +157,20 @@ class MainLogic : AppCompatActivity() {
             val intent = Intent(this, NavigationActivity::class.java)
             startActivity(intent)
         }
-        navigationComponentsButton.setOnClickListener {
-            val intent = Intent(this, NavigationComponentActivity::class.java)
+        navigationVMComponentsButton.setOnClickListener {
+            val intent = Intent(this, NavViewBindingActivity::class.java)
+            startActivity(intent)
+        }
+        navigationDMComponentsButton.setOnClickListener {
+            val intent = Intent(this, NavDataBindingActivity::class.java)
+            startActivity(intent)
+        }
+        dataBindingActivityButton.setOnClickListener {
+            val intent = Intent(this, DataBindingActivity::class.java)
+            startActivity(intent)
+        }
+        example1LWDButton.setOnClickListener {
+            val intent = Intent(this, Example1LWDActivity::class.java)
             startActivity(intent)
         }
 

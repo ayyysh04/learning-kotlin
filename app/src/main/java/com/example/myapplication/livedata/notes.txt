@@ -1,0 +1,26 @@
+Q.LiveData vs MutableLiveData
+Ans.LiveData and MutableLiveData are both classes provided by the Android Jetpack library to help with the implementation of the Observer pattern in Android applications. They are used for propagating changes to data from a data source to the UI layer of an app.
+
+  The main difference between LiveData and MutableLiveData is that LiveData is an immutable class, whereas MutableLiveData is a mutable class that allows the value to be changed.
+
+  LiveData is an abstract class that provides an observable data holder that can be observed by multiple observers. It is designed to be used as a read-only data holder that can only be modified by the data source that it is associated with. This means that once a value is set for a LiveData object, it cannot be changed directly by the UI layer or any other external code.
+
+  MutableLiveData is a subclass of LiveData that adds a setValue() method, which allows the value of the MutableLiveData object to be changed. It can be used as a writable data holder that can be updated by the UI layer or any other external code. This makes it useful for cases where the data needs to be updated frequently, such as in response to user input or network events.
+
+  Here's an example of how you could use LiveData and MutableLiveData:
+
+  // create a LiveData object
+  val liveData = MutableLiveData<String>()
+
+  // observe changes to the LiveData object
+  liveData.observe(this, Observer {
+      // update the UI with the new value
+  })
+
+  // set the value of the LiveData object
+  liveData.value = "Hello, world!"
+  In this example, we first create a MutableLiveData object and then observe changes to it using the observe() method. Whenever the value of the MutableLiveData object changes, the UI will be updated with the new value.
+
+  We then set the value of the MutableLiveData object using the value property. This will trigger the observer to be notified of the new value, which will update the UI.
+
+  In summary, LiveData and MutableLiveData are both useful classes for implementing the Observer pattern in Android applications. While LiveData provides a read-only data holder, MutableLiveData allows the value to be changed and can be used as a writable data holder.

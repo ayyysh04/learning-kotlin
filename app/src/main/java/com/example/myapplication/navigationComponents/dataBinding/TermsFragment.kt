@@ -1,4 +1,5 @@
-package com.example.myapplication.navigationComponents
+package com.example.myapplication.navigationComponents.dataBinding
+
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +8,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 
+/**
+ * A simple [Fragment] subclass.
+ */
 class TermsFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_terms, container, false)
+        return inflater.inflate(R.layout.fragment_terms2, container, false)
     }
+
+
 }

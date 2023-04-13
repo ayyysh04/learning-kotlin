@@ -50,7 +50,9 @@ android {
     viewBinding {
         enabled = true
     }
-
+    dataBinding {
+        enabled = true
+    }
 
     namespace 'com.example.myapplication'//used to define the app's package name
 }
@@ -87,8 +89,9 @@ dependencies {
 
     //livedata
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     kapt "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     //Kotlin extensions library for Android, which provides Kotlin extensions for some Android framework classes like Activity and Fragment.
     implementation 'androidx.appcompat:appcompat:1.6.1'
     //This is the AppCompat library for Android, which provides backward compatibility for new features of Android on older versions of Android.

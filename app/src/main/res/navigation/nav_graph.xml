@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
-<!--These are animation attributes that are used to define the enter and exit animations for transitions between two destinations (fragments or activities) in an Android app that uses the Navigation component.
-1.The app:enterAnim attribute defines the animation that is played when the user navigates to a destination. In this case, the @anim/slide_in_left animation will be played, which means that the destination will slide in from the left.
-2.The app:exitAnim attribute defines the animation that is played when the user navigates away from a destination. In this case, the @anim/slide_in_right animation will be played, which means that the current destination will slide out to the right.
-3.The app:popEnterAnim attribute defines the animation that is played when the user navigates back to a destination using the back button. In this case, the @anim/slide_out_right animation will be played, which means that the previous destination will slide in from the right.
-4.The app:popExitAnim attribute defines the animation that is played when the user navigates away from a destination using the back button. In this case, the @anim/slide_out_left animation will be played, which means that the current destination will slide out to the left.
--->
+    <!--These are animation attributes that are used to define the enter and exit animations for transitions between two destinations (fragments or activities) in an Android app that uses the Navigation component.
+    1.The app:enterAnim attribute defines the animation that is played when the user navigates to a destination. In this case, the @anim/slide_in_left animation will be played, which means that the destination will slide in from the left.
+    2.The app:exitAnim attribute defines the animation that is played when the user navigates away from a destination. In this case, the @anim/slide_in_right animation will be played, which means that the current destination will slide out to the right.
+    3.The app:popEnterAnim attribute defines the animation that is played when the user navigates back to a destination using the back button. In this case, the @anim/slide_out_right animation will be played, which means that the previous destination will slide in from the right.
+    4.The app:popExitAnim attribute defines the animation that is played when the user navigates away from a destination using the back button. In this case, the @anim/slide_out_left animation will be played, which means that the current destination will slide out to the left.
+    -->
+    <!--    The android:id attribute sets a unique identifier for the Fragment, which can be used to reference it programmatically, for example, to navigate to it or to retrieve its instance in code. In this case, the @+id/homeFragment identifier is assigned to the Fragment and can be used to reference it in other parts of the app.-->
+    <!--    The android:label attribute sets a label for the Fragment, which is typically used as the title of the Fragment when it appears in the app's navigation stack, such as in the ActionBar. In this case, the fragment_home string resource is assigned as the label for the Fragment.-->
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.myapplication.navigationComponents.HomePageFragment"
+        android:name="com.example.myapplication.navigationComponents.viewBinding.HomePageFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -32,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/emailFragment"
-        android:name="com.example.myapplication.navigationComponents.EmailFragment"
+        android:name="com.example.myapplication.navigationComponents.viewBinding.EmailFragment"
         android:label="fragment_email"
         tools:layout="@layout/fragment_email">
         <action
@@ -45,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.myapplication.navigationComponents.WelcomeFragment"
+        android:name="com.example.myapplication.navigationComponents.viewBinding.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome">
         <action
@@ -58,12 +60,12 @@
     </fragment>
     <fragment
         android:id="@+id/termsFragment"
-        android:name="com.example.myapplication.navigationComponents.TermsFragment"
+        android:name="com.example.myapplication.navigationComponents.viewBinding.TermsFragment"
         android:label="fragment_terms"
         tools:layout="@layout/fragment_terms" />
     <fragment
         android:id="@+id/nameFragment"
-        android:name="com.example.myapplication.navigationComponents.NameFragment"
+        android:name="com.example.myapplication.navigationComponents.viewBinding.NameFragment"
         android:label="fragment_name"
         tools:layout="@layout/fragment_name">
         <action

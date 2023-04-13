@@ -1,4 +1,4 @@
-package com.example.myapplication.navigationComponents
+package com.example.myapplication.navigationComponents.viewBinding
 
 import android.os.Bundle
 import android.view.LayoutInflater

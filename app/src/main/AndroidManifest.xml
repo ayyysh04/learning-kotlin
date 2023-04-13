@@ -15,7 +15,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".navigationComponents.NavigationComponentActivity"
+            android:name=".livedata.livedataWithDataBinding.challenge.LwdChallengeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livedata.twoWayDataBinding.TwoWayDataBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livedata.livedataWithDataBinding.Example1LWDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".livedata.sample2WithFactoryClass.SumLiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewModel.challenge.TotalSumViewModelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dataBinding.DataBindingWithObjectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dataBinding.challenge.DataBindingChallengeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dataBinding.DataBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".navigationComponents.viewBinding.NavViewBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".navigationComponents.dataBinding.NavDataBindingActivity"
             android:exported="false" />
         <activity
             android:name=".fragments.NavigationActivity"
@@ -52,7 +79,7 @@
             android:name=".recyclerview.RecyclerViewLogic"
             android:exported="false" />
         <activity
-            android:name=".livedata.LiveDataActivity"
+            android:name=".livedata.sample1.LiveDataActivity"
             android:exported="false" />
         <activity
             android:name=".viewModel.ViewModelActivity"
